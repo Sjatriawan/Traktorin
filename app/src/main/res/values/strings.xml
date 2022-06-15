@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Traktorin</string>
+    <string name="login">Login</string>
+    <string name="intro">Masuk dan gunakan Traktorin</string>
+    <string name="enter_your_password">Password</string>
+    <string name="login_hint">E-mail / Username</string>
+    <string name="password_visible_content_description">Show Password</string>
+    <string name="show_password">Hide password</string>
+    <string name="Login">Login</string>
+    <string name="dont_have_an_account">Tidak memiliki akun?</string>
+    <string name="sign_up">Daftar</string>
+    <string name="email">E-mail</string>
+    <string name="username">Username</string>
+    <string name="intro2">Cari atau tawarkan jasa menggunakan Traktorin</string>
+    <string name="sign_in">Masuk</string>
+    <string name="locate">Pohgading, Lombok Timur</string>
+    <string name="search">Telusuri</string>
+    <string name="favorite">Favorit</string>
+    <string name="service">Jasa</string>
+    <string name="profile">Profil</string>
+    <string name="message">Pesan</string>
+</resources>
