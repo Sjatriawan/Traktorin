@@ -20,8 +20,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import com.mobile.traktorin.R
-import com.mobile.traktorin.presentation.ui.theme.DarkBlue
-import com.mobile.traktorin.presentation.ui.theme.Yellow
+import com.mobile.traktorin.presentation.ui.theme.GreenTint
+
+
 import java.lang.Error
 
 @Composable
@@ -50,8 +51,8 @@ fun StandardTextField(
             },
 
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = DarkBlue,
-                unfocusedBorderColor = Gray
+                focusedBorderColor = GreenTint,
+                unfocusedBorderColor = Gray,
             ),
 
             placeholder = {

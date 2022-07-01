@@ -1,16 +1,21 @@
 package com.mobile.traktorin.presentation.components
 
 
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.mobile.traktorin.R
 import com.mobile.traktorin.domain.models.BottomNavItem
 import com.mobile.traktorin.presentation.ui.util.Screen
 
@@ -19,6 +24,10 @@ fun StandardScaffold(
     modifier: Modifier = Modifier,
     navController: NavController,
     showBottomBar:Boolean = true,
+    showToolBar:Boolean = true,
+    toolbarTitle:String?= null,
+    showBackArrow:Boolean = true,
+    navActions:@Composable RowScope.() -> Unit ={},
     viewModel: StandardScaffoldViewModel = hiltViewModel(),
     bottomNavItems: List<BottomNavItem> =listOf(
         BottomNavItem(
@@ -55,6 +64,7 @@ fun StandardScaffold(
     ),
     content: @Composable () -> Unit
 ){
+    
     Scaffold(
         bottomBar = {
             if (showBottomBar){

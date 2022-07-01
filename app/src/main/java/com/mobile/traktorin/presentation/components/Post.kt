@@ -21,15 +21,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.mobile.traktorin.R
+import com.mobile.traktorin.domain.models.Detail
 import com.mobile.traktorin.domain.models.PostModel
+import com.mobile.traktorin.presentation.detail.PostDetail
 import com.mobile.traktorin.presentation.ui.theme.spaceLarge
 import com.mobile.traktorin.presentation.ui.theme.spaceMedium
 
 
 @Composable
 fun Post(
-    post: PostModel
+    post: PostModel,
+    onPostClick:() -> Unit
 ){
     Box(
         modifier = Modifier
@@ -41,6 +46,9 @@ fun Post(
                 .fillMaxWidth()
                 .clip(MaterialTheme.shapes.medium)
                 .background(Color.White)
+                .clickable {
+                    onPostClick()
+                }
         ){
             Image(painterResource(
                 id = R.drawable.postphoto),
@@ -50,6 +58,7 @@ fun Post(
 
             Spacer(modifier = Modifier.height(spaceMedium))
             Text(
+
                 text = post.locate,
                 style = MaterialTheme.typography.h5
             )
@@ -68,4 +77,5 @@ fun Post(
 
     }
 }
+
 

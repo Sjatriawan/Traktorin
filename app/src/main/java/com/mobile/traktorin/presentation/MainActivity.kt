@@ -9,8 +9,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.mobile.traktorin.R
 import com.mobile.traktorin.presentation.components.StandardScaffold
 import com.mobile.traktorin.presentation.ui.theme.TraktorinTheme
 import com.mobile.traktorin.presentation.ui.util.Screen
@@ -37,6 +39,9 @@ class MainActivity : ComponentActivity() {
                             Screen.MessageScreen.route,
                             Screen.ProfileScreen.route
                             ),
+                        showBackArrow = navBackStackEntry?.destination?.route in listOf(
+                            Screen.PostDetailScreen.route
+                    ),
                         modifier = Modifier.fillMaxSize()
                     ) {
                         Navigation(navController)

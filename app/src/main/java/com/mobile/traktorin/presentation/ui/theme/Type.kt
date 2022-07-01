@@ -7,6 +7,7 @@ import androidx.compose.ui.text.font.Font
 
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.mobile.traktorin.R
 
@@ -24,6 +25,11 @@ val Quicksand = FontFamily(
     Font(R.font.quicksand_bold, FontWeight.Bold),
     )
 
+val Poppins = FontFamily(
+    Font(R.font.poppins_regular, FontWeight.Normal),
+    Font(R.font.poppins_semibold, FontWeight.SemiBold)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
@@ -34,32 +40,33 @@ val Typography = Typography(
     ),
 
     body2 = TextStyle(
-        fontFamily = ReemKufi,
+        fontFamily = Quicksand,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,
+        fontSize = 16.sp,
         color = TextBlue
     ),
 
 
 
     h1 = TextStyle(
-        fontFamily = ReemKufi,
+        fontFamily = Poppins,
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         color = TextBlue
     ),
 
     h2 = TextStyle(
-        fontFamily = ReemKufi,
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        color = TextBlue
+        fontFamily = Poppins,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.SemiBold,
+        color = DarkBlue
     ),
 
     h3 = TextStyle(
-        fontFamily = ReemKufi,
-        fontSize = 16.sp,
-        fontWeight = FontWeight.Medium
+        fontFamily = Poppins,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal,
+        color = DarkBlue
     ),
 
     h4 = TextStyle(
@@ -73,12 +80,12 @@ val Typography = Typography(
         fontFamily = ReemKufi,
         fontSize = 14.sp,
         fontWeight = FontWeight.SemiBold,
-        color = Color.Black
+        color = Color.Black,
     ),
 
     h6 = TextStyle(
         fontFamily = Quicksand,
-        fontSize = 12.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.Normal,
         color = Color.Black
     )

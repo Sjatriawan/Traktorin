@@ -1,13 +1,11 @@
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import androidx.navigation.Navigation
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import com.mobile.traktorin.domain.models.Detail
+import com.mobile.traktorin.domain.models.PostModel
 import com.mobile.traktorin.presentation.SearchScreen
+import com.mobile.traktorin.presentation.detail.PostDetail
 import com.mobile.traktorin.presentation.favorite.FavoriteScreen
 import com.mobile.traktorin.presentation.login.LoginScreen
 import com.mobile.traktorin.presentation.message.MessageScreen
@@ -53,6 +51,18 @@ fun Navigation(
 
         composable(Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
+        }
+
+        composable(Screen.PostDetailScreen.route){
+            PostDetail(
+                navController = navController,
+                post = Detail(
+                    merk = "Traktor G12KX",
+                    name = "Amak Mashan",
+                    locate = "Ambatukam",
+                    service_by = "Dilayani oleh:",
+                ),
+            )
         }
 
     }

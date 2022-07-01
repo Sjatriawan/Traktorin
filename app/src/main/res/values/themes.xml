@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.Traktorin" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor" >@color/pink</item>
+        <item name="android:statusBarColor" >@color/green</item>
 
     </style>
 

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Traktorin</string>
     <string name="login">Login</string>
-    <string name="intro">Masuk dan gunakan Traktorin</string>
-    <string name="enter_your_password">Password</string>
-    <string name="login_hint">E-mail / Username</string>
+    <string name="intro">Selamat datang</string>
+    <string name="enter_your_password">*****</string>
+    <string name="email_hint">example@email.com</string>
     <string name="password_visible_content_description">Show Password</string>
     <string name="show_password">Hide password</string>
     <string name="Login">Login</string>
@@ -11,7 +11,7 @@
     <string name="sign_up">Daftar</string>
     <string name="email">E-mail</string>
     <string name="username">Username</string>
-    <string name="intro2">Cari atau tawarkan jasa menggunakan Traktorin</string>
+    <string name="intro2">Daftar akun</string>
     <string name="sign_in">Masuk</string>
     <string name="locate">Pohgading, Lombok Timur</string>
     <string name="search">Telusuri</string>
@@ -19,4 +19,16 @@
     <string name="service">Jasa</string>
     <string name="profile">Profil</string>
     <string name="message">Pesan</string>
+    <string name="back">Back</string>
+    <string name="your_feed">Your feed</string>
+    <string name="merk">Traktor G11P0X</string>
+    <string name="name">Amaq Ashan</string>
+    <string name="service_by">Dilayani oleh:</string>
+    <string name="intro1">Silakan masuk terlebih dahulu dan daftar jika belum memiliki akun</string>
+    <string name="intro_regis">Silakan daftar dan masuk untuk menggunakan aplikasi</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Lupa password?</string>
+    <string name="ex_user">Contoh: John</string>
+    <string name="have_an_account">Punya akun?</string>
+    <string name="title_favorit">Favorit</string>
 </resources>
