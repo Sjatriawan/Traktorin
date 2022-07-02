@@ -3,9 +3,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.mobile.traktorin.domain.models.Detail
-import com.mobile.traktorin.domain.models.PostModel
 import com.mobile.traktorin.presentation.SearchScreen
 import com.mobile.traktorin.presentation.detail.PostDetail
+import com.mobile.traktorin.presentation.edit_profile.EditProfileScreen
 import com.mobile.traktorin.presentation.favorite.FavoriteScreen
 import com.mobile.traktorin.presentation.login.LoginScreen
 import com.mobile.traktorin.presentation.message.MessageScreen
@@ -51,6 +51,10 @@ fun Navigation(
 
         composable(Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
+        }
+
+        composable(Screen.EditProfileScreen.route){
+            EditProfileScreen(navController = navController)
         }
 
         composable(Screen.PostDetailScreen.route){

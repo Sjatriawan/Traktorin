@@ -31,4 +31,8 @@
     <string name="ex_user">Contoh: John</string>
     <string name="have_an_account">Punya akun?</string>
     <string name="title_favorit">Favorit</string>
+    <string name="edit_profile">Ubah identitas</string>
+    <string name="edit_profile2">Ubah info pribadi</string>
+    <string name="address">Alamat</string>
+    <string name="phone_number">No. Telepon</string>
 </resources>

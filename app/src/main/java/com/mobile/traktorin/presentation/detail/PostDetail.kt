@@ -53,7 +53,11 @@ fun PostDetail(
             modifier = Modifier.padding(start = 30.dp)
             )
         Spacer(modifier = Modifier.height(spaceSmall))
-        Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.padding(start = 10.dp, end = 10.dp, top = 15.dp, bottom = 15.dp))
+        Divider(
+            color = Color.Gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(start = 10.dp, end = 10.dp, top = 15.dp, bottom = 15.dp)
+        )
 
         Text(
             text = post.service_by,

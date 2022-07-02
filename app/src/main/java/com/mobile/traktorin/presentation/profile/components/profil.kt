@@ -1,8 +1,10 @@
 package com.mobile.traktorin.presentation.profile.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -24,11 +26,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.mobile.traktorin.R
 import com.mobile.traktorin.domain.models.ProfileModel
 import com.mobile.traktorin.presentation.ui.theme.Poppins
 import com.mobile.traktorin.presentation.ui.theme.spaceLarge
 import com.mobile.traktorin.presentation.ui.theme.spaceMedium
+import com.mobile.traktorin.presentation.ui.util.Screen
 
 @Composable
 fun ProfileItem(
@@ -58,9 +62,7 @@ fun ProfileItem(
 
 @Composable
 fun Setting(
-    onInformationClick:() -> Unit = {},
-    onPayClick:() -> Unit = {},
-    onTutorialClick:() -> Unit = {},
+    navController: NavController,
     modifier: Modifier = Modifier,
 
 ){
@@ -74,18 +76,62 @@ fun Setting(
             text = "Pengaturan Akun",
             modifier = Modifier.padding(start = spaceMedium)
         )
+
         Spacer(modifier = Modifier.height(spaceMedium))
-
-        ActionSetting(nameSetting = "Informasi pribadi", icon = Icons.Outlined.Person)
-        Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.padding(start = 5.dp, end = 30.dp, top = 15.dp, bottom = 15.dp))
+        ActionSetting(
+            onClick = {
+                      navController.navigate(Screen.EditProfileScreen.route)
+            },
+            nameSetting = "Informasi pribadi",
+            icon = Icons.Outlined.Person
+        )
+        Divider(
+            color = Color.Gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(
+                start = 5.dp,
+                end = 30.dp,
+                top = 15.dp,
+                bottom = 15.dp
+            )
+        )
+        Spacer(modifier = Modifier.height(3.dp))
+        ActionSetting(
+            nameSetting = "Pembayaran",
+            icon = Icons.Outlined.Paid,
+            onClick = {
+                navController.navigate(Screen.PostDetailScreen.route)
+            },
+        )
+        Divider(
+            color = Color.Gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(
+                start = 5.dp,
+                end = 30.dp,
+                top = 15.dp,
+                bottom = 15.dp
+            )
+        )
         Spacer(modifier = Modifier.height(3.dp))
 
-        ActionSetting(nameSetting = "Pembayaran", icon = Icons.Outlined.Paid)
-        Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.padding(start = 5.dp, end = 30.dp, top = 15.dp, bottom = 15.dp))
-        Spacer(modifier = Modifier.height(3.dp))
-
-        ActionSetting(nameSetting = "Cara kerja", icon = Icons.Outlined.Workspaces)
-        Divider(color = Color.Gray, thickness = 1.dp, modifier = Modifier.padding(start = 5.dp, end = 30.dp, top = 15.dp, bottom = 15.dp))
+        ActionSetting(
+            nameSetting = "Cara kerja",
+            icon = Icons.Outlined.Workspaces,
+            onClick = {
+                navController.navigate(Screen.PostDetailScreen.route)
+            },
+        )
+        Divider(
+            color = Color.Gray,
+            thickness = 1.dp,
+            modifier = Modifier.padding(
+                start = 5.dp,
+                end = 30.dp,
+                top = 15.dp,
+                bottom = 15.dp
+            )
+        )
         Spacer(modifier = Modifier.height(3.dp))
     }
 }
@@ -93,13 +139,14 @@ fun Setting(
 
 @Composable
 fun ActionSetting(
+    onClick: () -> Unit,
     nameSetting:String,
     iconSize: Dp = 28.dp,
     icon: ImageVector,
     modifier: Modifier = Modifier
 ){
     Row(modifier = Modifier
-        .fillMaxWidth(),
+        .fillMaxWidth().clickable(onClick = onClick),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
@@ -113,7 +160,7 @@ fun ActionSetting(
             text = nameSetting,
             fontFamily = Poppins,
             fontWeight = FontWeight.Normal,
-            fontSize = 14.sp
+            fontSize = 14.sp,
         )
 
     }

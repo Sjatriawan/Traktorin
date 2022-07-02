@@ -35,6 +35,7 @@ fun StandardTextField(
     keyboardType: KeyboardType = KeyboardType.Text,
     showPasswordToggle:Boolean = false,
     onPasswordToggleClick:(Boolean) -> Unit = {},
+    modifier: Modifier = Modifier,
     onValueChange:(String) -> Unit
 ){
     val isPasswordToggleDisplayed by remember{

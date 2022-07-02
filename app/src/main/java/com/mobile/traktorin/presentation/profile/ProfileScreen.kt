@@ -39,6 +39,6 @@ fun ProfileScreen(
                 ))
             }
         }
-        Setting()
+        Setting(navController = navController)
     }
 }

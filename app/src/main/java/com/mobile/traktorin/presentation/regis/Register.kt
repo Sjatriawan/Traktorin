@@ -43,6 +43,7 @@ fun RegisterScreen(
                 end = spaceLarge,
                 bottom = spaceMedium
             )
+
     ){
         Column(
             verticalArrangement = Arrangement.Center,
@@ -63,8 +64,7 @@ fun RegisterScreen(
             Image(
                 painterResource(id = R.drawable.join),
                 contentDescription ="welcome",
-                contentScale = ContentScale.FillWidth,
-                modifier = Modifier.fillMaxWidth().padding(start = 50.dp, end = 50.dp)
+                modifier = Modifier.fillMaxWidth().size(100.dp)
             )
             Spacer(modifier = Modifier.height(spaceSmall))
             Text(text = stringResource(id = R.string.email),

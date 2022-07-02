@@ -63,8 +63,7 @@ fun LoginScreen(
             Image(
                 painterResource(id = R.drawable.rafiki),
                 contentDescription ="welcome",
-                contentScale = ContentScale.FillWidth,
-                modifier = Modifier.fillMaxWidth().padding(start = 40.dp, end = 40.dp)
+                modifier = Modifier.fillMaxWidth().size(100.dp)
             )
             Spacer(modifier = Modifier.height(spaceMedium))
             Text(text = stringResource(id = R.string.email),
