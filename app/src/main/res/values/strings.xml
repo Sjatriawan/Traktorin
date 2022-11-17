@@ -35,4 +35,18 @@
     <string name="edit_profile2">Ubah info pribadi</string>
     <string name="address">Alamat</string>
     <string name="phone_number">No. Telepon</string>
+    <string name="this_field_cant_be_empty">Email tidak boleh kosong</string>
+    <string name="this_is_not_valid_email">Email ini tidak valid</string>
+    <string name="usermae_too_short">Username terlalu pendek</string>
+    <string name="username_cant_be_empty">Username tidak boleh kosong</string>
+    <string name="password_cant_be_empty">Kata sandi tidak boleh kosong</string>
+    <string name="Password_too_short">Kata sandi terlalu pendek</string>
+    <string name="invalid_password">Kata sandi setidaknya mengandung 1 kapital dan 1 angka</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_connection">Tidak dapat terhubung internet, periksa koneksi anda</string>
+    <string name="something_wrong">Ooops! ada yang salah, coba lagi</string>
+    <string name="success_register">Pendaftaran berhasil, silakan login</string>
+    <string name="error">Error</string>
+    <string name="error_disini">error disini</string>
+    <string name="cannot_reach_the_server">Server tidak terjangkau, periksa internet anda!</string>
 </resources>
