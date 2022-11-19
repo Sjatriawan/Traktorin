@@ -3,7 +3,6 @@
 
     <style name="Theme.Traktorin" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor" >@color/green</item>
-
+        <item name="android:windowBackground"/>
     </style>
-
 </resources>

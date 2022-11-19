@@ -26,6 +26,7 @@ import com.mobile.traktorin.core.presentation.ui.theme.spaceLarge
 import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 import com.mobile.traktorin.core.presentation.ui.util.asString
+import com.mobile.traktorin.core.presentation.util.UiEvent
 import com.mobile.traktorin.core.presentation.util.UiText
 import com.mobile.traktorin.feature_auth.domain.model.AuthError
 import kotlinx.coroutines.flow.collectLatest
@@ -46,12 +47,13 @@ fun RegisterScreen(
     LaunchedEffect(key1 = true){
         viewModel.eventFlow.collectLatest { event ->
             when(event){
-                is RegisterViewModel.UiEvent.SnackBarEvent ->{
+                is UiEvent.SnackBarEvent ->{
                     scaffoldState.snackbarHostState.showSnackbar(
                         event.uiText.asString(context),
                         duration = SnackbarDuration.Long
                     )
                 }
+                else -> {}
             }
         }
     }

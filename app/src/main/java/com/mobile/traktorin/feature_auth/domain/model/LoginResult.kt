@@ -1,0 +1,9 @@
+package com.mobile.traktorin.feature_auth.domain.model
+
+import com.mobile.traktorin.core.presentation.util.SimpleResource
+
+data class LoginResult(
+    val emailError:AuthError? = null,
+    val passwordError: AuthError? = null,
+    val result: SimpleResource? = null
+)

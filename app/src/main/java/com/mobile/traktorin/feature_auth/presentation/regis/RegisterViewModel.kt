@@ -12,6 +12,7 @@ import com.mobile.traktorin.core.presentation.util.Resource
 import com.mobile.traktorin.core.presentation.util.UiText
 import com.mobile.traktorin.core.domain.states.PasswordTextFieldState
 import com.mobile.traktorin.core.domain.states.StandardTextFieldState
+import com.mobile.traktorin.core.presentation.util.UiEvent
 import com.mobile.traktorin.feature_auth.domain.model.AuthError
 import com.mobile.traktorin.feature_auth.domain.usecase.RegisterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -122,7 +123,4 @@ class RegisterViewModel @Inject constructor(
     }
 
 
-    sealed class UiEvent{
-        data class SnackBarEvent( val uiText: UiText): UiEvent()
-    }
 }

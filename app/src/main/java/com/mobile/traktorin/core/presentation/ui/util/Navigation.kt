@@ -13,8 +13,8 @@ import com.mobile.traktorin.feature_chat.presentation.message.MessageScreen
 import com.mobile.traktorin.feature_profile.presentation.profile.ProfileScreen
 import com.mobile.traktorin.feature_auth.presentation.regis.RegisterScreen
 import com.mobile.traktorin.feature_service.presentation.servis.ServisScreen
-import com.mobile.traktorin.feature_splash.splash.SplashScreen
 import com.mobile.traktorin.core.presentation.ui.util.Screen
+import com.mobile.traktorin.feature_auth.presentation.splash.SplashScreen
 
 @Composable
 fun Navigation(
@@ -26,10 +26,11 @@ fun Navigation(
     ){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
-            
         }
         composable(Screen.LoginScreen.route){
-            LoginScreen(navController = navController)
+            LoginScreen(
+                navController = navController,
+                scaffoldState = scaffoldState)
 
         }
         composable(Screen.RegisterScreen.route){
