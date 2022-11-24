@@ -45,19 +45,21 @@ fun Post(
             Spacer(modifier = Modifier.height(spaceMedium))
             Text(
 
-                text = post.locate,
+                text = post.fullname,
                 style = MaterialTheme.typography.h5
             )
 
             Text(
-                text = post.distance,
+                text = post.village,
                 style = MaterialTheme.typography.h6
             )
 
             Text(
-                text = post.price,
-                style = MaterialTheme.typography.h5
+                text = post.price.toString(),
+                style = MaterialTheme.typography.h6
             )
+
+
         }
 
 

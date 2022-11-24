@@ -1,15 +1,12 @@
 package com.mobile.traktorin.core.domain.models
 
 data class PostModel(
-    var imageUrl:String,
-    override var locate:String,
-    var distance:String,
-    var price:String
-):Detail()
-
-open class Detail (
-    open var merk: String = "",
-    open var name: String = "",
-    open var locate: String = "",
-    open var service_by:String = ""
+    val fullname:String,
+    val village:String,
+    val district:String,
+    val province:String,
+    val imageUrl:String,
+    val timestamp:Long,
+    val description:String,
+    val price: Double?,
 )

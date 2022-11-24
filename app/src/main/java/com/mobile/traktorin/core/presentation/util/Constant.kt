@@ -3,6 +3,8 @@ package com.mobile.traktorin.core.presentation.util
 
 object Constant {
 
+    const val PAGE_SIZE_POSTS = 20
+
     const val SHARED_PREF_NAME= "shared_pref"
 
     const val MIN_PASSWORD_LENGTH = 8

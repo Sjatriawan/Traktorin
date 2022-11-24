@@ -43,19 +43,6 @@ fun ItemPost(navController: NavController){
             .fillMaxWidth()
     ) {
         Spacer(modifier = Modifier.height(spaceSmall))
-        repeat(10){
-            Post(
-                post = PostModel(
-                    imageUrl = "",
-                    locate = "Pogading, Lombok Timur",
-                    distance = "2 kilometer",
-                    price = "130 .000",
-                ),
-                onPostClick = {
-                    navController.navigate(Screen.PostDetailScreen.route)
-                }
-            )
-        }
 
     }
 }

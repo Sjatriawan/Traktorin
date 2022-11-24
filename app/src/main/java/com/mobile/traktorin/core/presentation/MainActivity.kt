@@ -38,14 +38,14 @@ class MainActivity : ComponentActivity() {
                     StandardScaffold(
                         navController = navController,
                         showBottomBar =  navBackStackEntry?.destination?.route in listOf(
-                            Screen.SearchScreen.route,
+                            Screen.MainFeedScreen.route,
                             Screen.FavoriteScreen.route,
                             Screen.ServiceScreen.route,
                             Screen.MessageScreen.route,
                             Screen.ProfileScreen.route
                             ),
                         showBackArrow = navBackStackEntry?.destination?.route in listOf(
-                            Screen.PostDetailScreen.route
+                            Screen.DetailFeedScreen.route
                     ),
                         state = scaffoldState,
                         modifier = Modifier.fillMaxSize()

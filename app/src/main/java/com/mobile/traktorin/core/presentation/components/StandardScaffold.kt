@@ -28,7 +28,7 @@ fun StandardScaffold(
     viewModel: StandardScaffoldViewModel = hiltViewModel(),
     bottomNavItems: List<BottomNavItem> =listOf(
         BottomNavItem(
-            route = Screen.SearchScreen.route,
+            route = Screen.MainFeedScreen.route,
             icon = Icons.Outlined.Search,
             contentDescription = "Search",
             label = "Telusuri"

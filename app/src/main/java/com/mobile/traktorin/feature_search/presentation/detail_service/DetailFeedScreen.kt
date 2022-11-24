@@ -10,13 +10,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.mobile.traktorin.R
-import com.mobile.traktorin.core.domain.models.Detail
+import com.mobile.traktorin.core.domain.models.PostModel
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 
 @Composable
-fun PostDetail(
+fun DetailFeedScreen(
     navController: NavController,
-    post:Detail,
+    post:PostModel
 ){
     Column(
         modifier = Modifier
@@ -29,13 +29,13 @@ fun PostDetail(
         )
         Spacer(modifier = Modifier.height(spaceSmall))
         Text(
-            text = post.merk,
+            text = post.fullname,
             style = MaterialTheme.typography.h1,
             modifier = Modifier.padding(start = 30.dp)
         )
         Spacer(modifier = Modifier.height(spaceSmall))
         Text(
-            text = post.locate,
+            text = post.village,
             style = MaterialTheme.typography.body2,
             modifier = Modifier.padding(start = 30.dp)
             )
@@ -47,14 +47,14 @@ fun PostDetail(
         )
 
         Text(
-            text = post.service_by,
+            text = post.village,
             style = MaterialTheme.typography.h2,
             modifier = Modifier.padding(start = 30.dp)
         )
 
         Spacer(modifier = Modifier.height(spaceSmall))
         Text(
-            text = post.name,
+            text = post.description,
             style = MaterialTheme.typography.body2,
             modifier = Modifier.padding(start = 30.dp)
         )

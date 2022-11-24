@@ -1,20 +1,22 @@
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.mobile.traktorin.core.domain.models.Detail
-import com.mobile.traktorin.core.presentation.SearchScreen
-import com.mobile.traktorin.feature_service.presentation.detail.PostDetail
+import com.mobile.traktorin.core.presentation.MainFeedScreen
 import com.mobile.traktorin.feature_profile.presentation.edit_profile.EditProfileScreen
 import com.mobile.traktorin.feature_favorite.presentation.favorite.FavoriteScreen
 import com.mobile.traktorin.feature_auth.presentation.login.LoginScreen
 import com.mobile.traktorin.feature_chat.presentation.message.MessageScreen
 import com.mobile.traktorin.feature_profile.presentation.profile.ProfileScreen
 import com.mobile.traktorin.feature_auth.presentation.regis.RegisterScreen
-import com.mobile.traktorin.feature_service.presentation.servis.ServisScreen
 import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_auth.presentation.splash.SplashScreen
+import com.mobile.traktorin.feature_service.presentation.create_servis.CreateServiceScreen
+
+
 
 @Composable
 fun Navigation(
@@ -23,6 +25,7 @@ fun Navigation(
 ){
     NavHost(navController = navController,
         startDestination = Screen.SplashScreen.route,
+        modifier = Modifier.fillMaxSize()
     ){
         composable(Screen.SplashScreen.route){
             SplashScreen(navController = navController)
@@ -40,15 +43,15 @@ fun Navigation(
             )
 
         }
-        composable(Screen.SearchScreen.route){
-            SearchScreen(navController = navController)
+        composable(Screen.MainFeedScreen.route){
+            MainFeedScreen(navController = navController, scaffoldState = scaffoldState )
         }
 
         composable(Screen.FavoriteScreen.route){
             FavoriteScreen(navController = navController)
         }
         composable(Screen.ServiceScreen.route){
-            ServisScreen(navController = navController)
+
 
         }
         composable(Screen.MessageScreen.route){
@@ -63,16 +66,13 @@ fun Navigation(
             EditProfileScreen(navController = navController)
         }
 
-        composable(Screen.PostDetailScreen.route){
-            PostDetail(
-                navController = navController,
-                post = Detail(
-                    merk = "Traktor G12KX",
-                    name = "Amak Mashan",
-                    locate = "Ambatukam",
-                    service_by = "Dilayani oleh:",
-                ),
-            )
+        composable(Screen.CreateServiceScreen.route){
+            CreateServiceScreen(navController = navController)
+        }
+
+
+        composable(Screen.DetailFeedScreen.route){
+
         }
 
     }

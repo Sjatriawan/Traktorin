@@ -52,7 +52,7 @@ fun LoginScreen(
                     )
                 }
                 is UiEvent.Navigate ->{
-                    navController.navigate(Screen.SearchScreen.route)
+                    navController.navigate(Screen.MainFeedScreen.route)
                 }
             }
         }

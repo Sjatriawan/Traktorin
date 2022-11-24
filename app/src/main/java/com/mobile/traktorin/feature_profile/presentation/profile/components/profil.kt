@@ -96,7 +96,7 @@ fun Setting(
             nameSetting = "Pembayaran",
             icon = Icons.Outlined.Paid,
             onClick = {
-                navController.navigate(Screen.PostDetailScreen.route)
+
             },
         )
         Divider(
@@ -115,7 +115,7 @@ fun Setting(
             nameSetting = "Cara kerja",
             icon = Icons.Outlined.Workspaces,
             onClick = {
-                navController.navigate(Screen.PostDetailScreen.route)
+
             },
         )
         Divider(
@@ -128,8 +128,24 @@ fun Setting(
                 bottom = 15.dp
             )
         )
-        Spacer(modifier = Modifier.height(3.dp))
+        Spacer(modifier = Modifier.height(5.dp))
+
+        SubMenu(
+            text = "Menjadi pembajak sawah?",
+            modifier = Modifier.padding(start = spaceMedium)
+        )
+
+        Spacer(modifier = Modifier.height(spaceMedium))
+        ActionSetting(
+            onClick = {
+                navController.navigate(Screen.CreateServiceScreen.route)
+            },
+            nameSetting = "Siapkan penawaran anda",
+            icon = Icons.Outlined.Person
+        )
     }
+
+
 }
 
 

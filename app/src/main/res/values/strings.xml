@@ -49,4 +49,24 @@
     <string name="error">Error</string>
     <string name="error_disini">error disini</string>
     <string name="cannot_reach_the_server">Server tidak terjangkau, periksa internet anda!</string>
+    <string name="create_post">Tawarkan jasa</string>
+    <string name="service_mode">Mode layanan</string>
+    <string name="ready_for">Siap jadi penyedia jasa traktor</string>
+    <string name="fullname">Nama lengkap</string>
+    <string name="intro_be_service">Isi data anda dengan lengkap dan benar!</string>
+    <string name="fullnamae_cant_be_empty">Nama lengkap tidak boleh kosong</string>
+    <string name="merk_tractor">Merk Traktor</string>
+    <string name="merk_cant_be_empty">Merk traktor harus diisi</string>
+    <string name="village">Desa</string>
+    <string name="village_cant_be_empty">Desa harus diisi</string>
+    <string name="district">Kecamatan</string>
+    <string name="district_cant_be_empty">Kecamatan harus diisi</string>
+    <string name="province">Provinsi</string>
+    <string name="province_cant_be_empty">Provinsi harus diisi</string>
+    <string name="price">Tarif (per are)</string>
+    <string name="price_cant_be_empty">Tarif harus diisi</string>
+    <string name="description_cant_be_empty">Deskripsi harus diisi</string>
+    <string name="description">Deskripsi jasa</string>
+    <string name="next">Lanjut</string>
+    <string name="upload_image">Upload gambar</string>
 </resources>
