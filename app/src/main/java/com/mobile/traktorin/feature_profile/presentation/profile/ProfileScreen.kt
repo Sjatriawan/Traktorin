@@ -17,6 +17,7 @@ import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 @Composable
 fun ProfileScreen(
     navController: NavController,
+
 ){
     Column(
         modifier = Modifier

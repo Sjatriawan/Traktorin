@@ -9,11 +9,9 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mobile.traktorin.core.domain.models.PostModel
 import com.mobile.traktorin.core.presentation.components.*
 import com.mobile.traktorin.feature_search.presentation.search.SearchViewModel
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
-import com.mobile.traktorin.core.presentation.ui.util.Screen
 
 @Composable
 fun SearchScreen(

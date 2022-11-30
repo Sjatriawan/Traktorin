@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.util.JsonToken
+import com.google.gson.Gson
 import com.mobile.traktorin.core.presentation.util.Constant
 import com.mobile.traktorin.feature_auth.domain.repository.AuthRepository
 import com.mobile.traktorin.feature_auth.domain.usecase.LoginUseCase
@@ -47,6 +48,12 @@ object AppModule {
                 it.proceed(modifiedRequest)
             }
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGson():Gson{
+        return Gson()
     }
 
 }

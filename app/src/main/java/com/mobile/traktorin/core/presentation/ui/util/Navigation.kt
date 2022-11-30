@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import coil.annotation.ExperimentalCoilApi
 import com.mobile.traktorin.core.presentation.MainFeedScreen
 import com.mobile.traktorin.feature_profile.presentation.edit_profile.EditProfileScreen
 import com.mobile.traktorin.feature_favorite.presentation.favorite.FavoriteScreen
@@ -18,6 +19,7 @@ import com.mobile.traktorin.feature_service.presentation.create_servis.CreateSer
 
 
 
+@ExperimentalCoilApi
 @Composable
 fun Navigation(
     navController: NavHostController,
@@ -67,7 +69,7 @@ fun Navigation(
         }
 
         composable(Screen.CreateServiceScreen.route){
-            CreateServiceScreen(navController = navController)
+            CreateServiceScreen(navController = navController,scaffoldState = scaffoldState)
         }
 
 

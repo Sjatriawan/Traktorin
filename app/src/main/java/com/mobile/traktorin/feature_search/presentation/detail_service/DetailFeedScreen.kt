@@ -10,13 +10,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.mobile.traktorin.R
-import com.mobile.traktorin.core.domain.models.PostModel
+import com.mobile.traktorin.core.domain.models.Post
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 
 @Composable
 fun DetailFeedScreen(
     navController: NavController,
-    post:PostModel
+    post:Post
 ){
     Column(
         modifier = Modifier

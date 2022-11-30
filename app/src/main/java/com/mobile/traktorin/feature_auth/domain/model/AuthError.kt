@@ -7,3 +7,8 @@ sealed class AuthError:Error(){
     object InvalidPassword : AuthError()
     object InvalidEmail : AuthError()
 }
+
+sealed class PostError:Error(){
+    object FieldEmpty: PostError()
+
+}

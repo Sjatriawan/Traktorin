@@ -1,19 +1,15 @@
 package com.mobile.traktorin.feature_auth.presentation.regis
 
-import android.util.Patterns
-
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mobile.traktorin.R
-import com.mobile.traktorin.core.presentation.util.Constant
 import com.mobile.traktorin.core.presentation.util.Resource
 import com.mobile.traktorin.core.presentation.util.UiText
 import com.mobile.traktorin.core.domain.states.PasswordTextFieldState
 import com.mobile.traktorin.core.domain.states.StandardTextFieldState
 import com.mobile.traktorin.core.presentation.util.UiEvent
-import com.mobile.traktorin.feature_auth.domain.model.AuthError
 import com.mobile.traktorin.feature_auth.domain.usecase.RegisterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -102,7 +98,7 @@ class RegisterViewModel @Inject constructor(
             when(registerResult.result){
                 is Resource.Success ->{
                     _eventFlow.emit(
-                        UiEvent.SnackBarEvent(UiText.StringResource(R.string.success_register))
+                        UiEvent.ShowSnackBar(UiText.StringResource(R.string.success_register))
                     )
                     _registerState.value = RegisterState(isLoading = false)
                     _usernameState.value = StandardTextFieldState()
@@ -111,7 +107,7 @@ class RegisterViewModel @Inject constructor(
                 }
                 is Resource.Error -> {
                     _eventFlow.emit(
-                        UiEvent.SnackBarEvent(registerResult.result.uiText ?: UiText.unknownError())
+                        UiEvent.ShowSnackBar(registerResult.result.uiText ?: UiText.unknownError())
                     )
                     _registerState.value = RegisterState(isLoading = false)
                 }

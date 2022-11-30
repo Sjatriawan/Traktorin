@@ -15,11 +15,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Paint
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,25 +40,63 @@ fun ProfileItem(
     profileModel: ProfileModel
 ){
     Column(
-        modifier.padding(spaceMedium)
+        modifier.fillMaxSize().padding(spaceMedium)
     ) {
-        Image(painterResource(
-            id = R.drawable.postphoto),
-            contentDescription ="Photo Profile" ,
-            contentScale = ContentScale.Crop,
-            modifier = modifier
-                .size(64.dp)
-                .clip(CircleShape)
-        )
-        Text(
-            text = profileModel.username,
-            fontFamily = Poppins,
-            fontWeight = FontWeight.Normal,
-            fontSize = 30.sp
-        )
+        Row(
+            modifier
+                .fillMaxWidth()
+                .align(Alignment.End),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Image(painterResource(
+                id = R.drawable.postphoto),
+                contentDescription ="Photo Profile" ,
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(64.dp)
+                    .clip(CircleShape)
+            )
+            Text(
+                modifier = Modifier.padding(horizontal = 10.dp),
+                text = "Satriawan",
+                fontSize = 24.sp
+            )
+        }
 
+        Row(modifier.fillMaxWidth().padding(top = 10.dp)) {
+            Text(
+                modifier = Modifier.padding(),
+                text = stringResource(id = R.string.village_example),
+                fontSize = 16.sp
+            )
+            Text(
+                modifier = Modifier.padding(),
+                text = stringResource(id = R.string.coma),
+                fontSize = 16.sp
+            )
+            Text(
+                modifier = Modifier.padding(),
+                text = stringResource(id = R.string.district_example),
+                fontSize = 16.sp
+            )
+        }
     }
 }
+
+
+@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
+@Composable
+fun ComposablePreview() {
+    ProfileItem(
+        modifier = Modifier,
+        profileModel = ProfileModel(
+            username = "Satriawan",
+         imageUrl = ""
+        )
+    )
+}
+
+
 
 @Composable
 fun Setting(
@@ -111,6 +153,15 @@ fun Setting(
         )
         Spacer(modifier = Modifier.height(3.dp))
 
+
+
+
+
+
+
+
+
+
         ActionSetting(
             nameSetting = "Cara kerja",
             icon = Icons.Outlined.Workspaces,
@@ -158,7 +209,8 @@ fun ActionSetting(
     modifier: Modifier = Modifier
 ){
     Row(modifier = Modifier
-        .fillMaxWidth().clickable(onClick = onClick),
+        .fillMaxWidth()
+        .clickable(onClick = onClick),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(

@@ -12,14 +12,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import com.mobile.traktorin.R
-import com.mobile.traktorin.core.domain.models.PostModel
+import com.mobile.traktorin.core.domain.models.Post
 import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
 
 
 @Composable
 fun Post(
     modifier: Modifier = Modifier,
-    post: PostModel,
+    post: Post,
     onPostClick:() -> Unit
 ){
     Box(

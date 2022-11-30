@@ -69,4 +69,17 @@
     <string name="description">Deskripsi jasa</string>
     <string name="next">Lanjut</string>
     <string name="upload_image">Upload gambar</string>
+    <string name="error_file_not_found">File tidak ditemukan</string>
+    <string name="post_image">Upload gambar</string>
+    <string name="post_created">Sukses</string>
+    <string name="error_fullname">Nama lengkap harus diisi</string>
+    <string name="error_image">Gambar kosong</string>
+    <string name="error_price">Harga harus diisi</string>
+    <string name="error_province">Provinsi harus diisi</string>
+    <string name="error_district">Kec. Harus diisi</string>
+    <string name="error_village">Desa harus diisi</string>
+    <string name="error_description">Deskripsi harus disi</string>
+    <string name="village_example">Pohgading</string>
+    <string name="district_example">Pringgabaya</string>
+    <string name="coma">", "</string>
 </resources>

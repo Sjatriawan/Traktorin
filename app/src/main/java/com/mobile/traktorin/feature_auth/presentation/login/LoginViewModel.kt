@@ -1,6 +1,5 @@
 package com.mobile.traktorin.feature_auth.presentation.login
 
-import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -12,9 +11,6 @@ import com.mobile.traktorin.core.presentation.util.Resource
 import com.mobile.traktorin.core.presentation.util.UiEvent
 import com.mobile.traktorin.core.presentation.util.UiText
 import com.mobile.traktorin.feature_auth.domain.usecase.LoginUseCase
-import com.mobile.traktorin.feature_auth.presentation.regis.RegisterEvent
-import com.mobile.traktorin.feature_auth.presentation.regis.RegisterState
-import com.mobile.traktorin.feature_auth.presentation.regis.RegisterViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -82,7 +78,7 @@ class LoginViewModel @Inject constructor(
                        }
                        is Resource.Error -> {
                            _eventFlow.emit(
-                               UiEvent.SnackBarEvent(loginResult.result.uiText ?: UiText.unknownError())
+                               UiEvent.ShowSnackBar(loginResult.result.uiText ?: UiText.unknownError())
                            )
                            _loginState.value= LoginState(isLoading = false)
                        }
