@@ -64,20 +64,20 @@ val Typography = Typography(
     h3 = TextStyle(
         fontFamily = Poppins,
         fontSize = 14.sp,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.SemiBold,
         color = DarkBlue
     ),
 
     h4 = TextStyle(
-        fontFamily = ReemKufi,
-        fontSize = 18.sp,
-        fontWeight = FontWeight.Normal,
-        color = Gray
+        fontFamily = Quicksand,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Bold,
+        color = Color.Black
     ),
 
     h5 = TextStyle(
-        fontFamily = ReemKufi,
-        fontSize = 14.sp,
+        fontFamily = Quicksand,
+        fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
         color = Color.Black,
     ),

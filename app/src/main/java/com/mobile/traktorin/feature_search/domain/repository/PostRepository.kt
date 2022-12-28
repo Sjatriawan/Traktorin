@@ -2,7 +2,9 @@ package com.mobile.traktorin.feature_search.domain.repository
 
 import android.net.Uri
 import androidx.paging.PagingData
+import com.mobile.response.BasicApiResponse
 import com.mobile.traktorin.core.domain.models.Post
+import com.mobile.traktorin.core.presentation.util.Resource
 import com.mobile.traktorin.core.presentation.util.SimpleResource
 import com.mobile.traktorin.feature_profile.domain.model.Profile
 import kotlinx.coroutines.flow.Flow
@@ -16,19 +18,11 @@ interface PostRepository {
         district: String,
         province:String,
         description: String,
-        price:String,
+        price:Double,
         imgFile: Uri,
     ):SimpleResource
+
+    suspend fun getPostDetail(
+        postId:String
+    ):Resource<Post>
 }
-//{
-//        fun toPost():Post  {
-//            return Post(
-//                fullname = fullname,
-//                village = village,
-//                district = district,
-//                province = province,
-//                description = description,
-//                price = price,
-//                timestamp = System.currentTimeMillis()
-//            )
-//        }

@@ -6,6 +6,6 @@ data class CreatePostRequest(
     val district:String,
     val province:String,
     val description:String,
-    val price: String,
+    val price: Double,
     )
 

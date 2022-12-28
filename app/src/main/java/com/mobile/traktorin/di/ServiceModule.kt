@@ -9,6 +9,7 @@ import com.mobile.traktorin.feature_search.domain.repository.PostRepository
 import com.mobile.traktorin.feature_search.domain.use_case.GetPostForHomeUseCase
 import com.mobile.traktorin.feature_search.domain.use_case.PostUseCase
 import com.mobile.traktorin.feature_search.domain.use_case.CreateServiceUseCase
+import com.mobile.traktorin.feature_search.domain.use_case.GetPostDetailUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -50,7 +51,8 @@ object ServiceModule {
     fun providePostUseCase(repository: PostRepository):PostUseCase{
         return PostUseCase(
             getPostForHomeUseCase = GetPostForHomeUseCase(repository),
-            createPostUseCase = CreateServiceUseCase(repository)
+            createPostUseCase = CreateServiceUseCase(repository),
+            getPostDetailUseCase = GetPostDetailUseCase(repository)
         )
     }
 

@@ -3,6 +3,7 @@ package com.mobile.traktorin.feature_profile.data.remote.response
 import com.mobile.traktorin.feature_profile.domain.model.Profile
 
 data class ProfileResponse(
+    val userId:String,
     val username:String,
     val fullname:String,
     val village:String,
@@ -14,6 +15,7 @@ data class ProfileResponse(
 ){
     fun toProfile(): Profile {
         return Profile(
+            userId = userId,
             username = username,
             fullname = fullname,
             village = village,

@@ -12,7 +12,6 @@ interface PostApi {
         @Query("pageSize") pageSize:Int
     ):List<Post>
 
-
     @Multipart
     @POST("/api/post/create")
     suspend fun createPost(
@@ -20,8 +19,13 @@ interface PostApi {
         @Part postImage: MultipartBody.Part
     ):BasicApiResponse<Unit>
 
+    @GET("/api/post/detail")
+    suspend fun getPostDetail(
+        @Query("post_id") postId:String
+    ):BasicApiResponse<Post>
 
     companion object{
-        const val BASE_URL = "http://192.168.37.78:8001/"
+        const val BASE_URL = "http://192.168.49.16:8001/"
+//        const val BASE_URL = "http://192.168.110.152:8001/"
     }
 }

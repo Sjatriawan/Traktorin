@@ -16,7 +16,7 @@ data class CreateServiceUseCase (
                 district: String,
                 province: String,
                 description: String,
-                price: String,
+                price: Double,
                 imgFile: Uri?
         ):SimpleResource{
                 if (imgFile == null){
@@ -32,11 +32,6 @@ data class CreateServiceUseCase (
 
                 if (village.isBlank()){
                         return Resource.Error(
-                                uiText = UiText.StringResource(R.string.error_fullname)
-                        )
-                }
-                if (village.isBlank()){
-                        return Resource.Error(
                                 uiText = UiText.StringResource(R.string.error_village)
                         )
                 }
@@ -50,7 +45,7 @@ data class CreateServiceUseCase (
                                 uiText = UiText.StringResource(R.string.error_province)
                         )
                 }
-                if (price.isBlank()){
+                if (price.isNaN()){
                         return Resource.Error(
                                 uiText = UiText.StringResource(R.string.error_price)
                         )

@@ -9,11 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.mobile.traktorin.R
 import com.mobile.traktorin.core.domain.models.Favorite
 import com.mobile.traktorin.core.presentation.components.StandardToolbar
-import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 
 @Composable
 fun FavoriteScreen(
@@ -22,18 +23,16 @@ fun FavoriteScreen(
     Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(spaceSmall)
         ){
             StandardToolbar(
-                navController = navController,
+                modifier = Modifier.fillMaxWidth(),
+                showBackArrow = true,
                 title = {
                         Text(
                             text = stringResource(id = R.string.title_favorit),
                             color = Color.Black
                         )
-                },
-                modifier = Modifier.fillMaxWidth(),
-                showBackArrow = true
+                }
             )
         LazyColumn(
             modifier = Modifier
@@ -50,6 +49,11 @@ fun FavoriteScreen(
                 )
             }
         }
-        }
+    }
+}
 
+@Preview
+@Composable
+fun PreviewFavorite(){
+    FavoriteScreen(navController = rememberNavController())
 }

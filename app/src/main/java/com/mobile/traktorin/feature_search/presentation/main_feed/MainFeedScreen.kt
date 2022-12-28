@@ -14,19 +14,22 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.mobile.traktorin.core.domain.models.Post
 import com.mobile.traktorin.core.presentation.components.*
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
+import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_search.presentation.main_feed.MainFeedEvent
 import com.mobile.traktorin.feature_search.presentation.main_feed.MainFeedViewModel
 import kotlinx.coroutines.launch
 
 @Composable
 fun MainFeedScreen(
-    navController: NavController,
+    onNavigate:(String) -> Unit = {},
+    onNavigateUp: () -> Unit = {},
     scaffoldState: ScaffoldState,
     viewModel: MainFeedViewModel = hiltViewModel()
     
@@ -37,27 +40,29 @@ fun MainFeedScreen(
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
-        SearchBar(navController = navController)
+        SearchBar(navController = rememberNavController())
         Box(modifier = Modifier.fillMaxSize()){
             if (state.isLoadingFirstTime){
                 CircularProgressIndicator(modifier = Modifier.align(Center))
             }
             LazyColumn {
                 items(posts){ post ->
-                    Post(post = Post(
-                        fullname = post?.fullname ?: "",
-                        imageUrl = post?.imageUrl ?: "",
-                        description = post?.description ?: "",
-                        village = post?.village ?: "",
-                        district = post?.district ?: "",
-                        province = post?.province ?: "",
-                        price = post?.price ?: "",
-                        username = post?.username ?: ""
-                    ),
-                        onPostClick = {
-//                navController = navController.navigate(Screen.DetailFeedScreen.route)
-                        }
-                    )
+                    if (post != null) {
+                        Post(post = Post(
+                            id = post.id,
+                            fullname = post?.fullname ?: "",
+                            imageUrl = post?.imageUrl ?: "",
+                            description = post?.description ?: "",
+                            village = post?.village ?: "",
+                            district = post?.district ?: "",
+                            province = post?.province ?: "",
+                            price = post.price
+                        ),
+                            onPostClick = {
+                                onNavigate(Screen.DetailFeedScreen.route + "/${post?.id}",)
+                            }
+                        )
+                    }
                 }
                 item{
                     if (state.isLoadingNewPosts){

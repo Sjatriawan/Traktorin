@@ -1,7 +1,7 @@
 package com.mobile.traktorin.feature_service.presentation.create_servis
 
+
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -15,9 +15,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -32,7 +32,6 @@ import com.mobile.traktorin.core.presentation.ui.theme.spaceExtraLarge
 import com.mobile.traktorin.core.presentation.ui.theme.spaceLarge
 import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
 import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
-import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.core.presentation.ui.util.asString
 import com.mobile.traktorin.core.presentation.util.UiEvent
 import com.mobile.traktorin.feature_auth.domain.model.AuthError
@@ -58,6 +57,7 @@ fun CreateServiceScreen(
     }
 
 
+
     val context = LocalContext.current
     LaunchedEffect(key1 = true){
         viewModel.eventFlow.collectLatest { event ->
@@ -81,7 +81,6 @@ fun CreateServiceScreen(
         modifier = Modifier.fillMaxSize()
     ) {
         StandardToolbar(
-            navController = navController,
             showBackArrow = true,
             title = {
                 Text(text = stringResource(id = R.string.create_post))
@@ -202,7 +201,6 @@ fun CreateServiceScreen(
                 },
             )
 
-
             Text(text = stringResource(id = R.string.price),
                 style= MaterialTheme.typography.h3,
                 textAlign = TextAlign.Start,
@@ -212,6 +210,7 @@ fun CreateServiceScreen(
                 text = viewModel.priceState.value.text,
                 modifier = Modifier.padding(10.dp),
                 shape = RoundedCornerShape(spaceSmall),
+                keyboardType = KeyboardType.Number,
                 onValueChange = {
                     viewModel.onEvent(CreateServiceEvent.EnteredPrice(it))
                 },

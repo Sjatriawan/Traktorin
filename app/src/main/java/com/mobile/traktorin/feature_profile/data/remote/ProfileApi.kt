@@ -14,6 +14,6 @@ interface ProfileApi{
        ):BasicApiResponse<ProfileResponse>
 
     companion object{
-        const val BASE_URL = "http://192.168.49.16:8001/"
+        const val BASE_URL = "http://192.168.110.152:8001/"
     }
 }

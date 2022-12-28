@@ -98,7 +98,7 @@ class CreateServiceViewModel @Inject constructor(
                         village = villageState.value.text,
                         district = districtState.value.text,
                         province = provinceState.value.text,
-                        price = priceState.value.text,
+                        price = priceState.value.text.toDouble(),
                     )
                     when(result){
                         is Resource.Success ->{

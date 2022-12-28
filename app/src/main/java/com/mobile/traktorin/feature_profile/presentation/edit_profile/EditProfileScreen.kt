@@ -1,42 +1,28 @@
 package com.mobile.traktorin.feature_profile.presentation.edit_profile
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.mobile.traktorin.R
-import com.mobile.traktorin.core.presentation.components.StandarTextFieldState
-import com.mobile.traktorin.core.presentation.components.StandardTextField
 import com.mobile.traktorin.core.presentation.components.StandardToolbar
 import com.mobile.traktorin.feature_profile.presentation.profile.components.SubMenu
 import com.mobile.traktorin.core.presentation.ui.theme.spaceLarge
-import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
-import com.mobile.traktorin.core.presentation.ui.theme.spaceSmall
 
 @Composable
 fun EditProfileScreen(
@@ -49,17 +35,16 @@ fun EditProfileScreen(
            .fillMaxSize()
    ) {
        StandardToolbar(
-           navController = navController,
            showBackArrow = true,
-           title = {
-               Text(stringResource(id = R.string.edit_profile))
-           },
            navAction = {
               IconButton(onClick = { /*TODO*/ }) {
                   Icon(
                       imageVector = Icons.Default.Check,
                       contentDescription = "check")
               }
+           },
+           title = {
+               Text(stringResource(id = R.string.edit_profile))
            }
        )
        Column(modifier = Modifier

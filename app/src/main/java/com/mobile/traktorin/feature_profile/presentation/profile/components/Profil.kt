@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.mobile.traktorin.R
 import com.mobile.traktorin.core.domain.models.ProfileModel
+import com.mobile.traktorin.core.domain.models.User
 import com.mobile.traktorin.core.presentation.ui.theme.Poppins
 import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
 import com.mobile.traktorin.core.presentation.ui.util.Screen
@@ -37,7 +38,9 @@ import com.mobile.traktorin.core.presentation.ui.util.Screen
 @Composable
 fun ProfileItem(
     modifier: Modifier = Modifier,
-    profileModel: ProfileModel
+    user: User,
+    isOwnProfileModel: Boolean = true,
+    onEditClick:() -> Unit = {}
 ){
     Column(
         modifier.fillMaxSize().padding(spaceMedium)
@@ -58,7 +61,7 @@ fun ProfileItem(
             )
             Text(
                 modifier = Modifier.padding(horizontal = 10.dp),
-                text = "Satriawan",
+                text = user.username,
                 fontSize = 24.sp
             )
         }
@@ -81,19 +84,6 @@ fun ProfileItem(
             )
         }
     }
-}
-
-
-@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
-@Composable
-fun ComposablePreview() {
-    ProfileItem(
-        modifier = Modifier,
-        profileModel = ProfileModel(
-            username = "Satriawan",
-         imageUrl = ""
-        )
-    )
 }
 
 
@@ -138,7 +128,7 @@ fun Setting(
             nameSetting = "Pembayaran",
             icon = Icons.Outlined.Paid,
             onClick = {
-
+                      navController.navigate(Screen.DetailFeedScreen.route)
             },
         )
         Divider(
@@ -152,14 +142,6 @@ fun Setting(
             )
         )
         Spacer(modifier = Modifier.height(3.dp))
-
-
-
-
-
-
-
-
 
 
         ActionSetting(

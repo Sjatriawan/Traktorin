@@ -45,7 +45,7 @@ class PostRepositoryImpl(
         district: String,
         province:String,
         description: String,
-        price:String,
+        price:Double,
         imgFile: Uri
     ): SimpleResource {
         val request = CreatePostRequest(fullname,village,district,province,description,price)
@@ -69,7 +69,7 @@ class PostRepositoryImpl(
             val response = api.createPost(
                 postData = MultipartBody.Part
                     .createFormData(
-                        name = "post_data",
+                        name = "post_pictures",
                         gson.toJson(request),
                     )
                 ,
@@ -98,6 +98,28 @@ class PostRepositoryImpl(
         }catch (e:IOException){
             Resource.Error(
                 uiText = UiText.StringResource(R.string.cannot_reach_the_server)
+            )
+        }
+
+    }
+
+    override suspend fun getPostDetail(postId: String): Resource<Post> {
+        return try {
+            val response = api.getPostDetail(postId = postId)
+            if (response.successful){
+                Resource.Success(response.data)
+            }else{
+                response.message?.let{ msg ->
+                    Resource.Error(UiText.DynamicString(msg))
+                }?: Resource.Error(UiText.StringResource(R.string.error_unknown))
+            }
+        }catch (e:IOException){
+            Resource.Error(
+                uiText = UiText.StringResource(R.string.cannot_reach_the_server)
+            )
+        }catch (e:HttpException){
+            Resource.Error(
+                uiText = UiText.StringResource(R.string.something_wrong)
             )
         }
 

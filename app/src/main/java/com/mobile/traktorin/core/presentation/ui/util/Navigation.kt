@@ -3,8 +3,10 @@ import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.mobile.traktorin.core.presentation.MainFeedScreen
 import com.mobile.traktorin.feature_profile.presentation.edit_profile.EditProfileScreen
@@ -16,7 +18,7 @@ import com.mobile.traktorin.feature_auth.presentation.regis.RegisterScreen
 import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_auth.presentation.splash.SplashScreen
 import com.mobile.traktorin.feature_service.presentation.create_servis.CreateServiceScreen
-
+import com.mobile.traktorin.feature_service.presentation.detail.DetailFeedScreen
 
 
 @ExperimentalCoilApi
@@ -46,7 +48,7 @@ fun Navigation(
 
         }
         composable(Screen.MainFeedScreen.route){
-            MainFeedScreen(navController = navController, scaffoldState = scaffoldState )
+            MainFeedScreen(onNavigate = navController::navigate, scaffoldState = scaffoldState )
         }
 
         composable(Screen.FavoriteScreen.route){
@@ -73,9 +75,21 @@ fun Navigation(
         }
 
 
-        composable(Screen.DetailFeedScreen.route){
-
+        composable(
+            route = Screen.DetailFeedScreen.route + "/{postId}",
+            arguments = listOf(
+                navArgument(
+                    name = "postId"
+                ){
+                    type = NavType.StringType
+                }
+            )
+        ){
+            DetailFeedScreen(
+                onNavigateUp = navController::navigateUp,
+                onNavigate = navController::navigate)
         }
 
     }
 }
+
