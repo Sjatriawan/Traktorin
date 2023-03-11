@@ -23,7 +23,10 @@ import com.mobile.traktorin.core.presentation.components.Post
 import com.mobile.traktorin.core.presentation.components.ShowText
 import com.mobile.traktorin.core.presentation.components.StandardToolbar
 import com.mobile.traktorin.core.presentation.ui.theme.Poppins
+import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_search.presentation.detail_service.DetailFeedViewModel
+import java.text.NumberFormat
+import java.util.*
 
 
 @Composable
@@ -131,13 +134,16 @@ fun DetailFeedScreen(
             }
         }
 
-        Column(Modifier.align(BottomCenter)) {
+        Column(
+            Modifier.align(BottomCenter)
+        ) {
+            val numberFormat = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"))
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
                 ShowText(
-                    text = "15.000",
+                    text = numberFormat.format(state.post?.price.toString().replace("IDR ", "Rp ").replace(",00", ""),),
                     style = TextStyle(
                         fontSize = 30.sp,
                         color = Color.Black,
@@ -161,7 +167,9 @@ fun DetailFeedScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(60.dp),
-                onClick = {}
+                onClick = {
+                    onNavigate(Screen.CreateOrderScreen.route)
+                }
             )
         }
 

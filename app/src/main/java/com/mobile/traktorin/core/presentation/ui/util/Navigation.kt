@@ -17,6 +17,7 @@ import com.mobile.traktorin.feature_profile.presentation.profile.ProfileScreen
 import com.mobile.traktorin.feature_auth.presentation.regis.RegisterScreen
 import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_auth.presentation.splash.SplashScreen
+import com.mobile.traktorin.feature_order.presentation.order.CreateOrderScreen
 import com.mobile.traktorin.feature_service.presentation.create_servis.CreateServiceScreen
 import com.mobile.traktorin.feature_service.presentation.detail.DetailFeedScreen
 
@@ -72,6 +73,13 @@ fun Navigation(
 
         composable(Screen.CreateServiceScreen.route){
             CreateServiceScreen(navController = navController,scaffoldState = scaffoldState)
+        }
+
+        composable(Screen.CreateOrderScreen.route){
+            CreateOrderScreen(
+                onNavigateUp = navController::navigateUp,
+                onNavigate = navController::navigate,
+                scaffoldState = scaffoldState)
         }
 
 

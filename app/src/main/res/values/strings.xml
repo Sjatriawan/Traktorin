@@ -82,4 +82,7 @@
     <string name="village_example">Pohgading</string>
     <string name="district_example">Pringgabaya</string>
     <string name="coma">", "</string>
+    <string name="luas_tanah">Luas tanah</string>
+    <string name="payment_method">Metode pembayaran</string>
+    <string name="cash">Cash</string>
 </resources>
