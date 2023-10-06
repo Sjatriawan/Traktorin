@@ -1,5 +1,7 @@
 package com.mobile.traktorin.core.presentation
 
+import android.content.ContentValues
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -50,7 +52,7 @@ fun MainFeedScreen(
                     if (post != null) {
                         Post(post = Post(
                             id = post.id,
-                            fullname = post?.fullname ?: "",
+                            fullname = post?.fullname,
                             imageUrl = post?.imageUrl ?: "",
                             description = post?.description ?: "",
                             village = post?.village ?: "",
@@ -60,6 +62,9 @@ fun MainFeedScreen(
                         ),
                             onPostClick = {
                                 onNavigate(Screen.DetailFeedScreen.route + "/${post?.id}",)
+
+                                Log.d(ContentValues.TAG, "Result: " + "/${post?.id}" );
+
                             }
                         )
                     }
@@ -101,14 +106,9 @@ fun MainFeedScreen(
     }
 
 }
-
-
-
-
 @Composable
 fun SearchBar(
     navController: NavController,
-
 ){
     Column(modifier = Modifier
         .fillMaxWidth()

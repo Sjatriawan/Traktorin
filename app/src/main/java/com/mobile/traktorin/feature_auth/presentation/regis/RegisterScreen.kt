@@ -110,7 +110,6 @@ fun RegisterScreen(
                       }
                       else -> ""
                       },
-                hint = stringResource(id = R.string.email_hint),
                 shape = RoundedCornerShape(spaceSmall)
             )
 
@@ -125,7 +124,6 @@ fun RegisterScreen(
                 onValueChange = {
                     viewModel.onEvent(RegisterEvent.EnteredUsername(it))
                 },
-                hint = stringResource(id = R.string.ex_user),
                 error = when(viewModel.usernameState.value.error){
                     is AuthError.InputTooShort->{
                         stringResource(id = R.string.usermae_too_short)
@@ -149,7 +147,6 @@ fun RegisterScreen(
                 onValueChange = {
                     viewModel.onEvent(RegisterEvent.EnteredPassword(it))
                 },
-                hint = stringResource(id = R.string.enter_your_password),
                 keyboardType = KeyboardType.Password,
                 error = when(passwordState.error){
                     is AuthError.FieldEmpty ->{

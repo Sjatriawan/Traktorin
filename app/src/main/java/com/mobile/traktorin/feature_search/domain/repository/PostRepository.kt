@@ -20,7 +20,7 @@ interface PostRepository {
         description: String,
         price:Double,
         imgFile: Uri,
-    ):SimpleResource
+    ):SimpleResource<Any?>
 
     suspend fun getPostDetail(
         postId:String

@@ -1,20 +1,48 @@
 package com.mobile.traktorin.core.presentation.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.material.RadioButtonColors
-import androidx.compose.material.RadioButtonDefaults
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.mobile.traktorin.core.presentation.ui.theme.spaceMedium
 
 @Composable
 fun CreateRadioButton(
-    selected: Boolean,
-    onClick: (() -> Unit)?,
-    modifier: Modifier = Modifier,
-    enabled: Boolean = true,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-    colors: RadioButtonColors = RadioButtonDefaults.colors()
 ) {
+    val radioOptions = listOf("Cash", "Transfer")
+    val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[1] ) }
+    Column {
+        radioOptions.forEach { text ->
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .selectable(
+                        selected = (text == selectedOption),
+                        onClick = {
+                            onOptionSelected(text)
+                        }
+                    )
+            ) {
+                RadioButton(
+                    selected = (text == selectedOption),
+                    onClick = { onOptionSelected(text) }
+                )
+                ShowText(
+                    text = text,
+                    style = MaterialTheme.typography.h3.merge(),
+                    modifier = Modifier.padding(start = 10.dp)
+                )
+            }
+        }
+    }
+
 
 }

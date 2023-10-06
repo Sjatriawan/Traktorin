@@ -5,5 +5,5 @@ import com.mobile.traktorin.core.presentation.util.SimpleResource
 data class LoginResult(
     val emailError:AuthError? = null,
     val passwordError: AuthError? = null,
-    val result: SimpleResource? = null
+    val result: SimpleResource<Any?>? = null
 )

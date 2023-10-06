@@ -109,8 +109,7 @@ fun LoginScreen(
                         stringResource(id = R.string.this_is_not_valid_email)
                     }
                     else -> ""
-                },
-                hint = stringResource(id = R.string.email_hint)
+                }
             )
 
             Spacer(modifier = Modifier.height(spaceSmall))
@@ -125,7 +124,6 @@ fun LoginScreen(
                     viewModel.onEvent(LoginEvent.EnteredPassword(it)
                     )
                 },
-                hint = stringResource(id = R.string.enter_your_password),
                 keyboardType = KeyboardType.Password,
                 showPasswordToggle = state.isPasswordVisible,
                 error = when(passwordState.error){

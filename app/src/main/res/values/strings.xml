@@ -85,4 +85,8 @@
     <string name="luas_tanah">Luas tanah</string>
     <string name="payment_method">Metode pembayaran</string>
     <string name="cash">Cash</string>
+    <string name="bank_transfer">Transfer bank</string>
+    <string name="confirm_now">Konfirmasi</string>
+    <string name="order_success">Order sukses</string>
+    <string name="home">Oke</string>
 </resources>

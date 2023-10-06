@@ -47,7 +47,7 @@ class PostRepositoryImpl(
         description: String,
         price:Double,
         imgFile: Uri
-    ): SimpleResource {
+    ): SimpleResource<Any?> {
         val request = CreatePostRequest(fullname,village,district,province,description,price)
         val file = withContext(Dispatchers.IO){
             appContext.contentResolver.openFileDescriptor(imgFile,"r")?.let { fd ->

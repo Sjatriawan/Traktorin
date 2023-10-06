@@ -17,7 +17,10 @@ import com.mobile.traktorin.feature_profile.presentation.profile.ProfileScreen
 import com.mobile.traktorin.feature_auth.presentation.regis.RegisterScreen
 import com.mobile.traktorin.core.presentation.ui.util.Screen
 import com.mobile.traktorin.feature_auth.presentation.splash.SplashScreen
-import com.mobile.traktorin.feature_order.presentation.order.CreateOrderScreen
+import com.mobile.traktorin.feature_order.presentation.create_order.CreateOrderScreen
+import com.mobile.traktorin.feature_order.presentation.order.OrderDetailScreen
+import com.mobile.traktorin.feature_order.presentation.order.OrderScreen
+import com.mobile.traktorin.feature_order.presentation.order_success.OrderSuccessScreen
 import com.mobile.traktorin.feature_service.presentation.create_servis.CreateServiceScreen
 import com.mobile.traktorin.feature_service.presentation.detail.DetailFeedScreen
 
@@ -28,7 +31,8 @@ fun Navigation(
     navController: NavHostController,
     scaffoldState: ScaffoldState
 ){
-    NavHost(navController = navController,
+    NavHost(
+        navController = navController,
         startDestination = Screen.SplashScreen.route,
         modifier = Modifier.fillMaxSize()
     ){
@@ -53,10 +57,17 @@ fun Navigation(
         }
 
         composable(Screen.FavoriteScreen.route){
-            FavoriteScreen(navController = navController)
+            FavoriteScreen(
+                onNavigate = navController::navigate,
+                scaffoldState = scaffoldState
+            )
         }
         composable(Screen.ServiceScreen.route){
+            OrderScreen(
+                onNavigate = navController::navigate,
+                scaffoldState = scaffoldState
 
+            )
 
         }
         composable(Screen.MessageScreen.route){
@@ -82,6 +93,29 @@ fun Navigation(
                 scaffoldState = scaffoldState)
         }
 
+        composable(Screen.OrderScreenSuccess.route){
+            OrderSuccessScreen(
+                onNavigateUp = navController::navigateUp,
+                onNavigate = navController::navigate,
+            )
+        }
+
+        composable(
+            route = Screen.OrderDetailScreen.route + "/{orderId}",
+            arguments = listOf(
+                navArgument(
+                    name = "orderId"
+                ){
+                    type = NavType.StringType
+                }
+            )
+        ){
+            OrderDetailScreen(
+                onNavigateUp = navController::navigateUp,
+                onNavigate = navController::navigate,
+            )
+        }
+
 
         composable(
             route = Screen.DetailFeedScreen.route + "/{postId}",
@@ -95,7 +129,8 @@ fun Navigation(
         ){
             DetailFeedScreen(
                 onNavigateUp = navController::navigateUp,
-                onNavigate = navController::navigate)
+                onNavigate = navController::navigate,
+            )
         }
 
     }

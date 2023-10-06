@@ -13,6 +13,9 @@ sealed class Screen (val route: String){
     object EditProfileScreen:Screen(route = "edit_profile_screen")
     object CreateServiceScreen:Screen(route = "create_service_screen")
     object ServiceModeScreen:Screen(route = "service_mode_screen")
-    object CreateServiceScreenTwo:Screen(route = "service_mode_screen_two")
+    object OrderScreen:Screen(route = "order_screen")
+
+    object OrderDetailScreen:Screen(route = "order_detail_screen")
     object CreateOrderScreen:Screen(route = "create_order_screen")
+    object OrderScreenSuccess:Screen(route = "order_screen_success")
 }

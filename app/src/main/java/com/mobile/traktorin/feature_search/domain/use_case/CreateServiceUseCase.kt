@@ -18,7 +18,7 @@ data class CreateServiceUseCase (
                 description: String,
                 price: Double,
                 imgFile: Uri?
-        ):SimpleResource{
+        ):SimpleResource<Any?> {
                 if (imgFile == null){
                         return Resource.Error(
                                 uiText = UiText.StringResource(R.string.error_image)

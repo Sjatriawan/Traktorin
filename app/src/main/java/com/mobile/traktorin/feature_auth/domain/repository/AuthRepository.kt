@@ -8,12 +8,12 @@ interface AuthRepository {
         email:String,
         username:String,
         password:String
-    ):SimpleResource
+    ):SimpleResource<Any?>
 
     suspend fun login(
         email: String,
         password: String
-    ):SimpleResource
+    ):SimpleResource<Any?>
 
-    suspend fun authenticate():SimpleResource
+    suspend fun authenticate():SimpleResource<Any?>
 }

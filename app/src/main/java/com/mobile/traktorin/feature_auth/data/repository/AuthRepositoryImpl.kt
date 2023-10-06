@@ -23,7 +23,7 @@ class AuthRepositoryImpl(
         email:String,
         username: String,
         password:String
-    ): SimpleResource {
+    ): SimpleResource<Any?> {
         val request = CreateAccountRequest(email,username, password)
        return try {
             val response = api.register(request)
@@ -51,7 +51,7 @@ class AuthRepositoryImpl(
     override suspend fun login(
         email: String,
         password: String
-    ): SimpleResource {
+    ): SimpleResource<Any?> {
         val request= LoginRequest(email, password)
         return try {
             val response = api.login(request)
@@ -81,7 +81,7 @@ class AuthRepositoryImpl(
         }
     }
 
-    override suspend fun authenticate(): SimpleResource {
+    override suspend fun authenticate(): SimpleResource<Any?> {
         return try {
             api.authenticate()
                 Resource.Success(Unit)

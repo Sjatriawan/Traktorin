@@ -6,7 +6,7 @@ import com.mobile.traktorin.feature_auth.domain.repository.AuthRepository
 class AuthenticateUseCase(
     private val repository: AuthRepository
 ) {
-    suspend operator fun invoke():SimpleResource{
+    suspend operator fun invoke():SimpleResource<Any?> {
         return repository.authenticate()
     }
 }

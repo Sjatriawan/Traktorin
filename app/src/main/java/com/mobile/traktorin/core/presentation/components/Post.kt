@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -22,6 +23,7 @@ import androidx.compose.ui.Alignment.Companion.Top
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -46,7 +48,6 @@ fun Post(
     post: Post,
     onPostClick:() -> Unit
 ){
-
     val numberFormat = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"))
     Box(
         modifier = Modifier
@@ -87,8 +88,8 @@ fun Post(
                 )
                 Spacer(modifier = Modifier.padding(verySmall))
                 Text(
-                    text = "M Yogi Satriawan",
-                    style = MaterialTheme.typography.h4,
+                    text = post.fullname,
+                    style = MaterialTheme.typography.h6,
                 )
             }
             Row {
